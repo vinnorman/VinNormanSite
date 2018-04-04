@@ -1,7 +1,20 @@
-.navbar-custom {
-    background: linear-gradient(rgb(57, 35, 61), rgb(25, 22, 26));
+body {
+    font-family: 'Lato', sans-serif;
+
 }
 
+
+.cover {
+    background: url(https://images.unsplash.com/photo-1511269974491-7a969994a71f?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=ae620cebd3eb4e41acd3e52733d34b6d&auto=format&fit=crop&w=1489&q=80) center;
+    background-size: cover;
+    border-radius: 0;
+    width: 100%;
+    color: #fff;
+    padding-top: 1rem; }
+
+
 .jumbotron {
-    background: rgb(222, 217, 223);
+    color: white;
+    background: transparent;
 }
+
