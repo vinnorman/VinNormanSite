@@ -13,14 +13,14 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
         crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/main.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="../stylesheets/main.css" />
 </head>
 
 <body>
     <header class="cover">
 
         <nav class="navbar navbar-expand-md navbar-dark">
-            <a class="navbar-brand" href="index.html">Vin Norman</a>
+            <a class="navbar-brand" href="../index.html">Vin Norman</a>
 
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#vinNormanNav" aria-controls="navbarTogglerDemo02"
                 aria-expanded="false" aria-label="Toggle navigation">
@@ -30,7 +30,7 @@
             <div class="collapse navbar-collapse" id="vinNormanNav">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="index.html">Home
+                        <a class="nav-link" href="../index.html">Home
                             <span class="sr-only">(current)</span>
                         </a>
                     </li>
@@ -46,7 +46,7 @@
                             <a class="dropdown-item" href="#">Front End</a>
                             <a class="dropdown-item" href="#">Back End</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="views/rest-guide.html">My RESTful Guide</a>
+                            <a class="dropdown-item" href="#">My RESTful Guide</a>
                         </div>
                     </li>
                     <li class="nav-item">
@@ -72,55 +72,86 @@
         <div class="jumbotron">
             <div class="container text-center">
                 <h1 class="display-4">
-                    <strong>Vin Norman, Developer</strong>
+                    <strong>RESTful Routing Guide</strong>
                 </h1>
-                <p class="lead">This will be my introductory paragraph. Short, punchy</p>
+                <p class="lead">Simple reference for RESTful routes.</p>
             </div>
         </div>
     </header>
 
+
     <main>
 
-
         <div class="container">
-            <div class="row text-center">
-                <div class="col-md-4 mb-5 mb-md-0">
-                    <div class="card">
-                        <div class="card-body">
-                            <i class="fa fa-android fa-3x "></i>
-                            <h5 class="card-title mt-2">Android</h5>
-                            <hr>
-                            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.
-                                This content is a little bit longer.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-5 mb-md-0">
-                    <div class="card">
-                        <div class="card-body">
-                            <i class="fa fa-desktop fa-3x icon-custom"></i>
-                            <h5 class="card-title mt-2">Web</h5>
-                            <hr>
-                            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.
-                                This content is a little bit longer.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-5 mb-md-0">
-                    <div class="card">
-                        <div class="card-body">
-                            <i class="fa fa-database fa-3x icon-custom"></i>
-                            <h5 class="card-title mt-2">Database</h5>
-                            <hr>
-                            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.
-                                This content is a little bit longer.</p>
-                        </div>
-                    </div>
-                </div>
+            <table class="table table-hover table-bordered">
 
-            </div>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Path</th>
+                        <th>HTTP Verb</th>
+                        <th>Purpose</th>
+                        <th>Mongoose Method</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr >
+                        <td>Index</td>
+                        <td>/dogs</td>
+                        <td>GET</td>
+                        <td>List all dogs.</td>
+                        <td>Dog.find()</td>
+                    </tr>
+                    <tr class="table-success">
+                        <td>New</td>
+                        <td>/dogs/new</td>
+                        <td>GET</td>
+                        <td>Show new dog form</td>
+                        <td>N/A</td>
+                    </tr>
+                    <tr class="table-success"> 
+                        <td>Create</td>
+                        <td>/dogs</td>
+                        <td>POST</td>
+                        <td>Create a new dog, then redirect somewhere</td>
+                        <td>Dog.create()</td>
+                    </tr>
+                    <tr class="table-primary">
+                        <td>Show</td>
+                        <td>/dogs/:id</td>
+                        <td>GET</td>
+                        <td>Show info about one specific dog</td>
+                        <td>Dog.findById()</td>
+                    </tr>
+                    <tr class="table-warning">
+                        <td>Edit</td>
+                        <td>/dogs/:id/edit</td>
+                        <td>GET</td>
+                        <td>Show edit form for one dog</td>
+                        <td>Dog.findById()</td>
+                    </tr>
+                    <tr class="table-warning">
+                        <td>Update</td>
+                        <td>/dogs/:id</td>
+                        <td>PUT</td>
+                        <td>Update a particular dog, then redirect somewhere</td>
+                        <td>Dog.findByIdAndUpdate()</td>
+                    </tr>
+                    <tr class="table-danger">
+                        <td>Destroy</td>
+                        <td>/dogs/:id</td>
+                        <td>DELETE</td>
+                        <td>Delete a particular dog, then redirect somewhere</td>
+                        <td>Dog.findByidAndRemove()</td>
+                    </tr>
+
+                </tbody>
+            </table>
         </div>
+
     </main>
+
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
         crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
